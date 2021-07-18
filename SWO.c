@@ -44,3 +44,21 @@ printf("\r\n");
 
 
 }
+
+void log_debug_array(char const * const label, void const *array, uint16_t const len)
+{
+  	printf("log debug array: ");
+       
+    for (uint16_t i = 0; i < len; i++)
+    {
+    	uint8_t val = *((uint8_t *)(array + i));
+    	printf("0x%02X", val);
+    	
+    	// Add ", " after all elements except the last one.
+    	if (i < len - 1)
+    	{
+    	    printf(", ");
+    	}
+    }
+	printf("}\n");
+}
